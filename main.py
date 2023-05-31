@@ -73,16 +73,16 @@ class ImageAugmentationGUI(QWidget):
         os.makedirs(run_folder, exist_ok=True)
 
         # 증강할 변환 정의하기
-        transform = A.Compose([
-            A.Resize(width=256, height=256),    #가로(width)와 세로(height) 크기로 조정
-            A.RandomCrop(width=224, height=224),#가로(width)와 세로(height) 크기로 무작위로 자름
-            A.HorizontalFlip(p=0.5),            #이미지를 수평으로 무작위로 뒤집습니다. 
-            A.Rotate(limit=30),                 #이미지를 최대 +-30도까지 무작위로 회전
-            A.RandomBrightnessContrast(p=0.2),  #명암 대비를 무작위로 조절
-            A.HueSaturationValue(p=0.2),        #색상, 채도, 명도를 무작위로 조절.
-            A.ShiftScaleRotate(p=0.2),          #이미지를 무작위로 이동, 확대/축소 및 회전
-            A.GaussianBlur(p=0.2),              #이미지에 가우시안 블러를 적용합니다
-            A.RandomGamma(p=0.2),               #이미지의 감마(gamma) 값을 무작위로 조절
+        transform = Image_Augumentation.Compose([
+            Image_Augumentation.Resize(width=256, height=256),    #가로(width)와 세로(height) 크기로 조정
+            Image_Augumentation.RandomCrop(width=224, height=224),#가로(width)와 세로(height) 크기로 무작위로 자름
+            Image_Augumentation.HorizontalFlip(p=0.5),            #이미지를 수평으로 무작위로 뒤집습니다. 
+            Image_Augumentation.Rotate(limit=30),                 #이미지를 최대 +-30도까지 무작위로 회전
+            Image_Augumentation.RandomBrightnessContrast(p=0.2),  #명암 대비를 무작위로 조절
+            Image_Augumentation.HueSaturationValue(p=0.2),        #색상, 채도, 명도를 무작위로 조절.
+            Image_Augumentation.ShiftScaleRotate(p=0.2),          #이미지를 무작위로 이동, 확대/축소 및 회전
+            Image_Augumentation.GaussianBlur(p=0.2),              #이미지에 가우시안 블러를 적용합니다
+            Image_Augumentation.RandomGamma(p=0.2),               #이미지의 감마(gamma) 값을 무작위로 조절
         ])
          
         # 대상 폴더 내에 있는 이미지 파일들의 경로 가져오기
