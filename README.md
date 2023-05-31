@@ -1,5 +1,7 @@
 Image_Augumentation
 ===
+Requirments 
+
 python 3.11.x
 
 pip install pyqt5
